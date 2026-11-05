@@ -1,8 +1,8 @@
 import email
 import smtplib
 import imaplib
-from email.MIMEText import MIMEText
-from email.MIMEMultipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 import os
 from dotenv import load_dotenv
 
@@ -40,7 +40,7 @@ class Gmail:
 
         ms.login(self.login, self.password)
         ms.sendmail(self.login,
-                    ms, msg.as_string())
+                    recipients, msg.as_string())
 
         ms.quit()
         #send end
